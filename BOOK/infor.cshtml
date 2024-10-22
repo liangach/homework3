@@ -1,0 +1,23 @@
+@model IEnumerable<BOOK3.Models.Book3>
+<table class="table table-striped">
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>PublishingTime</th>
+        <th>Price</th>
+        <th colspan="2">operate</th>
+    </tr>
+    @foreach (var m in Model)
+    {
+        <tr>
+            <td>@m.Title</td>
+            <td>@m.Author</td>
+            <td>@m.Publisher</td>
+            <td>@m.ReleaseDate.Date.ToShortDateString()</td>
+            <td>@m.Price</td>
+            <td><a href="Edit/@m.Id">edit</a></td>
+            <td><a href="Delete/@m.Id">delete</a></td>
+        </tr>
+    }
+</table>
